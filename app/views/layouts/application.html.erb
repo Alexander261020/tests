@@ -14,7 +14,7 @@
     <div class="col-10 m-auto p-5">
       <%= link_to 'tests', root_path, class: "btn btn-primary" %>
       <% if user_signed_in? %>
-        <%= @user.name %>
+        <%= @user.username %>
         <%= link_to 'edit', edit_user_registration_path, class: "btn btn-primary" %>
         <%= link_to 'log out', destroy_user_session_path, class: "btn btn-primary", method: "DELETE" %>
       <% else %>

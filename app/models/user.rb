@@ -4,14 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
-  validates :name, length: { minimum: 2 }
+  validates :username, presence: true
+  validates :username, length: { minimum: 2, maximum: 20}
 
-  before_validation :set_name, on: :create
+  before_validation :set_username, on: :create
 
   private
 
-  def set_name
-    self.name = "Children without name №#{rand(777)}" if self.name.blank?
+  def set_username
+    self.username = "User №#{rand(777)}" if self.username.blank?
   end
 end
