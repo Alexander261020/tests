@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_current_user
 
   def index
+    @classifications = Classification.all
   end
 
   def show
