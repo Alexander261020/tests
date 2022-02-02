@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tests for you</title>
+    <title><%= t('title') %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,17 +13,17 @@
   <body>
     <div class="col-11 m-auto p-5">
     <div class="col-7 d-inline-block">
-      <%= link_to "tests", root_path, class: "btn btn-primary" %>
+      <%= link_to t('title'), root_path, class: "btn btn-primary" %>
     </div>
       <div class="col-4 d-inline-block text-right">
         <% if user_signed_in? %>
           <%= content_tag "div", @user.username , class: "m-1 d-inline-block"%>
           <%= image_tag(@user.avatar.mini.url, class: "rounded") if @user.avatar? %>
-          <%= link_to "edit", edit_user_registration_path, class: "btn btn-primary m-1" %>
-          <%= link_to "log out", destroy_user_session_path, class: "btn btn-primary m-1", method: "DELETE" %>
+          <%= link_to t('in_form.edit'), edit_user_registration_path, class: "btn btn-primary m-1" %>
+          <%= link_to t('in_form.log_out'), destroy_user_session_path, class: "btn btn-primary m-1", method: "DELETE" %>
         <% else %>
-          <%= link_to "registration", cancel_user_registration_path, class: "btn btn-primary m-1" %>
-          <%= link_to "log in", new_user_session_path, class: "btn btn-primary m-1" %>
+          <%= link_to t('in_form.reg'), cancel_user_registration_path, class: "btn btn-primary m-1" %>
+          <%= link_to t('in_form.log_in'), new_user_session_path, class: "btn btn-primary m-1" %>
         <% end %>
       </div>
       <%= yield %>
