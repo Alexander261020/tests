@@ -18,6 +18,7 @@
       <div class="col-4 d-inline-block text-right">
         <% if user_signed_in? %>
           <%= content_tag "div", @user.username , class: "m-1 d-inline-block"%>
+          <%= image_tag(@user.avatar.mini.url) if @user.avatar? %>
           <%= link_to "edit", edit_user_registration_path, class: "btn btn-primary m-1" %>
           <%= link_to "log out", destroy_user_session_path, class: "btn btn-primary m-1", method: "DELETE" %>
         <% else %>

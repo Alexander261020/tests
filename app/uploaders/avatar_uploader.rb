@@ -18,7 +18,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # А потом нужно сделать миниатюрную версию 100x100
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process resize_to_fit: [100, 100]
+  end
+
+  # А потом нужно сделать миниатюрную версию 100x100
+  version :mini do
+    process resize_to_fit: [30, 30]
   end
 
   # Мы разрешаем для загрузки только файлы с расширением картинок
