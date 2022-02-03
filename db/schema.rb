@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_02_105959) do
+ActiveRecord::Schema.define(version: 2022_02_03_092330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_105959) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["id"], name: "index_classifications_on_id", unique: true
   end
 
   create_table "levels", force: :cascade do |t|
@@ -28,6 +27,16 @@ ActiveRecord::Schema.define(version: 2022_02_02_105959) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "classification_id", null: false
     t.index ["classification_id"], name: "index_levels_on_classification_id"
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer "number", limit: 2
+    t.string "name"
+    t.string "answer", default: [], array: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "level_id", null: false
+    t.index ["level_id"], name: "index_questions_on_level_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +54,5 @@ ActiveRecord::Schema.define(version: 2022_02_02_105959) do
   end
 
   add_foreign_key "levels", "classifications"
+  add_foreign_key "questions", "levels"
 end
