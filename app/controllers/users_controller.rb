@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @classifications = Classification.all
   end
 
   def destroy

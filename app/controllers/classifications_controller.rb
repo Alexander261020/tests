@@ -2,8 +2,7 @@ class ClassificationsController < ApplicationController
   before_action :authorize_user
 
   def show
-    name = params[:name]
-    @classification = Classification.with_levels.find_by(name: name)
+    @classification = Classification.with_levels.find_by(id: params[:id])
     @levels = @classification.levels
   end
 

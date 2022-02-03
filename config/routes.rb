@@ -2,7 +2,33 @@ Rails.application.routes.draw do
   root 'users#index'
   # devise_for :users
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  get '/classification/show/:name', to: 'classifications#show', as: 'classification'
+  #resources :classification, only: [:show]
+
+=begin
+  get '/classification/:name', to: 'classifications#show', as: 'classification' do
+    get '/level/:name', to: 'levels#show', as: 'level'
+  end
+=end
+  get 'users/show'
+  resources :classifications, only: [:show] do
+    resources :levels, only: [:show] do
+      
+    end
+  end
+
+=begin   resources :events do
+    resources :comments, only: [:create, :destroy]
+      # вложенный ресурс подписок
+    resources :subscriptions, only: [:create, :destroy]
+    resources :photos, only: [:create, :destroy]
+    # нужно будет удалить как разберусь с проблемой отпрвки ссылки через method post
+    get '/photos/:id/', to: 'photos#destroy'
+    post :show, on: :member
+  end
+
+  resources :users, only: [:show, :edit, :update] 
+=end
+
   # get '/photos/:id/', to: 'photos#destroy'
   # get 'classification' to: 'classification#show'
   # resource :classification, only: [:show]

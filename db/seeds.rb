@@ -4,7 +4,7 @@
 Classification.destroy_all
 User.destroy_all
 Level.destroy_all
-User.create(username: 'user0', email: 'u0@mail.ru', password: '123123', id: 1000)
+User.create(username: 'admin', email: 'admin@mail.ru', password: '123123', id: 1000)
 User.create(username: 'user1', email: 'u1@mail.ru', password: '123123', id: 1001)
 User.create(username: 'user2', email: 'u2@mail.ru', password: '123123', id: 1002)
 User.create(username: 'user3', email: 'u3@mail.ru', password: '123123', id: 1003)

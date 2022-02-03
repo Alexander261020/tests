@@ -1,2 +1,7 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if @admin %>
+  <h2>Привет <%= @user.username %></h2><br>
+  Выберем категорию и класс для парсинга:
+<% end %>
+<div class="row mt-4">
+  <%= render partial: "classifications/classification", collection: @classifications %>
+</div>
