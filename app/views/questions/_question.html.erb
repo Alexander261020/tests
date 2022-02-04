@@ -1,0 +1,7 @@
+<div class="m-2 p-2 px-4 bg-secondary rounded">
+  <h4><%= question.number %></h4>
+  <h6><%= question.name %></h6>
+  <% question.answer.each do |answer| %>
+    <div><input type="radio" name="<%= question.number %>" value="<%= answer %>" /><%= answer %></div>
+  <% end %>
+</div>

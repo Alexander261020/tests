@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_02_03_092330) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer "number", limit: 2
+    t.string "number"
     t.string "name"
     t.string "answer", default: [], array: true
     t.datetime "created_at", precision: 6, null: false

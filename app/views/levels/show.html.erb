@@ -17,7 +17,9 @@
       или <%= link_to "Назад", :back %>
     </div>
   <% end %>
-  <div> 
-    Всего вопросов по этому разделу: <%= @level.questions.count %>
-  </div>
 <% end %>
+
+<div> 
+  Всего вопросов по этому разделу: <%= @level.questions.count %>
+</div>
+<%= render partial: "questions/question", collection: @level.questions %>
