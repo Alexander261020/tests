@@ -2,17 +2,22 @@
 <% if @admin %>
   <h2>Привет <%= @user.username %></h2><br>
   Введите url для парсинга:
-  
-  <%= form_for(classification_level_path(@level.classification, @level)) do |f| %>
+  <%= form_with url: create_questions_path, method: :post do |f| %>
 
     <div class="form-group">
-      <%= f.label :url, class: "fw-bold" %>
-      <%= f.text_field :url, class: "col-12 mb-2 form-control p-1 pr-2" %>
+      <%= f.label :url_path, class: "fw-bold" %>
+      <%= f.text_field :url_path, class: "col-12 mb-2 form-control p-1 pr-2" %>
     </div>
 
+    <div class="form-group">
+       <%= hidden_field_tag 'level', @level.id %>
+    </div>
     <div class="actions mt-2">
       <%= f.submit "Отправить", class: "btn btn-primary" %>
       или <%= link_to "Назад", :back %>
     </div>
   <% end %>
+  <div> 
+    Всего вопросов по этому разделу: <%= @level.questions.count %>
+  </div>
 <% end %>
