@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   def index
     @classifications = Classification.all
+    # flash[:success] = "Post successfully created"
+    # flash[:danger] = "Post successfully created"
   end
 
   def show

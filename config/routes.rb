@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
   get 'users/show'
+
   resources :classifications, only: [:show] do
     resources :levels, only: [:show]
   end

@@ -12,10 +12,10 @@
 
   <body>
     <div class="col-11 m-auto p-5">
-    <div class="col-7 d-inline-block">
-      <%= link_to t('title'), root_path, class: "btn btn-primary" %>
-    </div>
-      <div class="col-4 d-inline-block text-right">
+      <div class="col-7 d-inline-block">
+        <%= link_to t('title'), root_path, class: "btn btn-primary" %>
+      </div>
+      <div class="col-4 d-inline-block text-right mb-1 float-right">
         <% if user_signed_in? %>
           <div class="d-inline-block">
             <%= content_tag "div", link_to(@user.username, users_show_path(name: @user.username)), class: "m-1 d-inline-block"%>
@@ -28,6 +28,16 @@
           <%= link_to t('in_form.log_in'), new_user_session_path, class: "btn btn-primary m-1" %>
         <% end %>
       </div>
+
+      <% unless flash.nil? %>
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%=key %>" id="win-message" role="alert">
+            <%= value %>
+            <button class="btn btn-close float-end" id="btn-close"></button>
+          </div>
+        <% end %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>

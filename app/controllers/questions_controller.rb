@@ -5,13 +5,19 @@ class QuestionsController < ApplicationController
   def create
     level = Level.find_by!(id: params[:level])
     questions = parsing_testedu(params[:url_path])
-
+    count = 0
     questions.each do | question_params |
       question = Question.new(question_params)
       question.level = level
-      question.save
+      count += 1 if question.save
     end
     # http://localhost:3000/classifications/1003/levels/33  notice: I18n.t('controllers.comments.created')
+    if count.zero?
+      flash[:alert] = "Не удалось спарсить :("
+    else
+      flash[:notice] = "Парсинг прошел успешно, добавлено #{count} вопросов!"
+    end
+
     redirect_to classification_level_path(level.classification, level)
   end
 
