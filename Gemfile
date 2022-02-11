@@ -21,6 +21,10 @@ gem 'carrierwave'
 # for change size images
 gem 'rmagick'
 
+gem 'rspec-rails', '~> 3.4'
+gem 'factory_girl_rails'  # gem 'factory_bot_rails'
+gem 'shoulda-matchers'
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

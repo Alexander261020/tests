@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :username, length: { minimum: 2, maximum: 20}
+  validates :email, presence: true
 
   before_validation :set_username, on: :create
 
