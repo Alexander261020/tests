@@ -14,5 +14,5 @@
 * Bootstrap - стили
 * PostgreSQL - БД
 * Carrierwave - для загрузки изображений
-* devise
+* devise - для регистрации
 * open-uri и nokogiri - для парсинга
