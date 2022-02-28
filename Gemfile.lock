@@ -184,6 +184,7 @@ GEM
       railties (>= 5.0)
     rexml (3.2.5)
     rmagick (4.2.4)
+    rolify (6.0.0)
     rspec-core (3.9.3)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.4)
@@ -248,6 +249,7 @@ DEPENDENCIES
   rails-i18n (~> 7)
   rexml
   rmagick
+  rolify
   rspec-rails (~> 3.4)
   shoulda-matchers
   sprockets-rails (~> 3.4)
