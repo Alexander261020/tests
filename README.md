@@ -27,6 +27,6 @@ bundle, rails css:install:bootstrap, yarn build:css, yarn build;
 
 Для парсинга нужно иметь права админа. Для примера можно воспользоваться командой rails db:seed, и войти по email = 'admin@mail.ru', password = '123123'.  
 Далее выбираете нужный Вам тест и в поле url вводите нужный вам url адрес (для парсинга выбран сайт [testedu.ru](http://testedu.ru)).  
-Например, для Английского языка, 1 класса вводим строку: https://testedu.ru/test/english-language/1-klass/vstav-propushhennuyu-bukvu.html 
+Например, для Английского языка, 1 класса, вводим строку: https://testedu.ru/test/english-language/1-klass/vstav-propushhennuyu-bukvu.html 
 
 ### Проект в процессе разработки!
