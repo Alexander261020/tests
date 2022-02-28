@@ -94,12 +94,11 @@ GEM
       devise (>= 4.8.0)
     diff-lcs (1.5.0)
     digest (3.1.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -240,7 +239,7 @@ DEPENDENCIES
   cssbundling-rails (~> 1.0)
   devise
   devise-i18n
-  factory_girl_rails
+  dotenv-rails
   jsbundling-rails (~> 1.0)
   pg (~> 1.1)
   puma (~> 5.0)
@@ -256,7 +255,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.3p157
 
 BUNDLED WITH
-   2.2.30
+   2.3.7

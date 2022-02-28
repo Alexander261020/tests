@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
       question.level = level
       count += 1 if question.save
     end
-    # http://localhost:3000/classifications/1003/levels/33  notice: I18n.t('controllers.comments.created')
+
     if count.zero?
       flash[:alert] = "Не удалось спарсить :("
     else
