@@ -15,3 +15,4 @@
 * PostgreSQL - БД
 * Carrierwave - для загрузки изображений
 * devise
+* open-uri и nokogiri - для парсинга
