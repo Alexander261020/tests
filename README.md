@@ -1,24 +1,17 @@
-# README
+# Тесты
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Мой собственный проект для ***закрепления пройденного материала***, поэтому для создания тестов использовал "парсинг". 
 
-Things you may want to cover:
+## Описание
 
-* Ruby version
+Пользователю предлагается пройти некоторые тесты по созданным темам (Английский язык, математика, биология и т.п.).
 
-* System dependencies
+## Чем пользуемся
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 3.0.3
+* Rail 7
+* Esbuild для сборки assets
+* Bootstrap - стили
+* PostgreSQL - БД
+* Carrierwave - для загрузки изображений
+* devise
